@@ -16,7 +16,7 @@ def fibonacci():
             print(terceiro)
             primeiro = segundo
             segundo = terceiro
-            contador = contador  + 1  
+            contador += 1  
     
     else:
         print("Ok então")
