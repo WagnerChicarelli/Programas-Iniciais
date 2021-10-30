@@ -2,6 +2,7 @@ import random
 import os
 
 def resposta_aleatoria():
+    bem_vindo()
     pergunta = input("Faça sua pergunta\n")           
     os.system('cls') or None 
     respota_aleatoria = carrega_resposta()   
@@ -22,6 +23,11 @@ def carrega_resposta():
     respota_aleatoria = resposta[numero].lower()
 
     return respota_aleatoria
+
+def bem_vindo():
+    print("***************************************")
+    print("*** Respostas simples de Sim ou Não ***")
+    print("***************************************")
 
 if(__name__ == "__main__"):
     resposta_aleatoria()
