@@ -1,35 +1,31 @@
+import os
 def questao():
     explicacao()
-    funcao_programa()
-    remover_palavras()
+    remover_palavras = palavras_a_serem_removidas()
+    print(os.path.splitext(os.path.basename("musica.txt"))[0])
+    print("*************************************************************************************************************")
+    leitura_do_aquivo()
+    remocao_das_palavras(remover_palavras)
 
-def remover_palavras():
-    arquivo1 = open("Questões Faculdade Federal/palavras_a_serem_removidas.txt", "r",encoding="utf-8")
-    arquivo2 = open("Questões Faculdade Federal/musica.txt", "r",encoding="utf-8")
-    with open('Questões Faculdade Federal/palavras_a_serem_removidas.txt', 'r',encoding="utf-8") as f:
-        results = [[str(entry) for entry in line.split()] for line in f.readlines()]
-   
-    for linha in arquivo2:
-        linha = linha.split()
-        result = [palavra for palavra in linha if palavra.lower() not in results]
-        retorno = ' '.join(result)
-        print(retorno)
-    print("-------------------------------------------------------------------------------------------------------------")
-    #print(results)
-    arquivo1.close()
-    arquivo2.close()
-    
-
-def funcao_programa():
-    arquivo2 = open("Questões Faculdade Federal/musica.txt", "r+",encoding="utf-8")
-    for linha in arquivo2:
-        linha =linha.strip()
+def remocao_das_palavras(remover_palavras):
+    palavras = str(remover_palavras)
+    musica = open("Questões Faculdade Federal/musica.txt","r", encoding="utf-8")
+    for linha in musica:
+        linha = linha.strip()
+        linha = linha.replace(palavras,"")
         print(linha)
-    print("-------------------------------------------------------------------------------------------------------------")
-    arquivo2.close()
-    
-    
 
+def leitura_do_aquivo():
+    musica = open("Questões Faculdade Federal/musica.txt","r", encoding="utf-8")
+    for linha in musica:
+        linha = linha.strip()
+        print(linha)
+    print("*************************************************************************************************************")
+
+def palavras_a_serem_removidas():
+    remover_palavras = input("Escreva as palavras que serão removidas:\n")
+    
+    return remover_palavras
     
 def explicacao():
     print("*************************************************************************************************************")
