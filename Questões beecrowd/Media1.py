@@ -17,7 +17,7 @@ def tempo_pausa():
 
 def RetornoLogico(resposta):
     resposta  = float(resposta) 
-    print("A media entre os dois numeros que você : {:.5f}".format(resposta))
+    print("MEDIA = {:.5f}".format(resposta))
 
 def ProcessarTarefa():
     primeiro_numero = float(input("Digite o primeiro numero:\n"))
