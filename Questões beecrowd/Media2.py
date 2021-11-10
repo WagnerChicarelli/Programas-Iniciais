@@ -1,6 +1,6 @@
 import time
 import os
-def problema1005():
+def problema1006():
     limpar_tela()
     bem_vindo()
     tempo_pausa()
@@ -46,4 +46,4 @@ def limpar_tela():
     os.system('cls') or None
 
 if(__name__ == "__main__"):
-    problema1005()
+    problema1006()
